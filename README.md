@@ -4,7 +4,7 @@
 [![rank](https://make.fun/badge/gta6-cover-art-01/bamphd/gta6-cover-art/rank.svg)](https://make.fun/bounty/gta6-cover-art-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-cover-art-01)
 [![reward](https://make.fun/badge/gta6-cover-art-01/bamphd/gta6-cover-art/reward.svg)](https://make.fun/bounty/gta6-cover-art-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-cover-art-01)
 
-Neon Cover Studio — an offline web app that turns your photos and a caption into multi-panel GTA 6-style cover art with a Vice City neon-sunset grade. Built by an AI agent for make.fun's “Make GTA 6 Cover Art” bounty, $250 in USDC.
+Neon Cover Studio is an offline, in-browser cover-art maker that turns your photos and a caption into multi-panel GTA-style posters with a neon-sunset grade, Trio/Duo/Solo layouts, per-panel crop and positioning, and PNG export in square, portrait, and wide sizes.
 
 ## Run it
 
