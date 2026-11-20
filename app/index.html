@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon Cover Studio — GTA-style cover art maker</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="top">
+  <h1>Neon Cover Studio</h1>
+  <p>Turn a photo and a caption into multi-panel neon-sunset cover art. Offline, in your browser — your photos never leave your machine.</p>
+</header>
+<main class="app">
+  <section class="controls" aria-label="Cover controls">
+    <div class="group">
+      <h2>1 · Photos</h2>
+      <label class="file">Add up to 3 photos
+        <input id="photo" type="file" accept="image/*" multiple>
+      </label>
+      <div class="row">
+        <button type="button" data-sample="pier">Sample: Pier</button>
+        <button type="button" data-sample="boulevard">Sample: Boulevard</button>
+      </div>
+      <div id="thumbs" class="thumbs" aria-label="Loaded photos"></div>
+      <p class="hint">One photo fills every panel with a different crop; several photos fill the panels one each.</p>
+    </div>
+    <div class="group">
+      <h2>2 · Layout</h2>
+      <div class="row" role="group" aria-label="Panel layout">
+        <button type="button" class="chip" data-layout="trio" aria-pressed="true">Trio</button>
+        <button type="button" class="chip" data-layout="duo" aria-pressed="false">Duo</button>
+        <button type="button" class="chip" data-layout="solo" aria-pressed="false">Solo</button>
+      </div>
+    </div>
+    <div class="group">
+      <h2>3 · Selected panel</h2>
+      <div id="panelBtns" class="row" role="group" aria-label="Select a panel"></div>
+      <label>Photo in this panel
+        <select id="panelPhoto"></select>
+      </label>
+      <label>Zoom <input id="zoom" type="range" min="0.5" max="3" step="0.05" value="1"></label>
+      <label>Position left–right <input id="posX" type="range" min="-1" max="1" step="0.01" value="0"></label>
+      <label>Position up–down <input id="posY" type="range" min="-1" max="1" step="0.01" value="0"></label>
+      <p class="hint">Click a panel in the preview to select it, or a thumbnail to put that photo in it.</p>
+    </div>
+    <div class="group">
+      <h2>4 · Lettering</h2>
+      <label>Caption <input id="caption" type="text" maxlength="28" value="Sunset Heist"></label>
+      <label>Kicker <input id="kicker" type="text" maxlength="24" value="Neon Sunset • Est. 2026"></label>
+      <label>Sunset grade <input id="grade" type="range" min="0" max="100" step="1" value="80"></label>
+    </div>
+    <div class="group">
+      <h2>5 · Export</h2>
+      <div class="row" role="group" aria-label="Export size">
+        <button type="button" class="chip" data-size="1080x1080" aria-pressed="false">Square · 1080×1080</button>
+        <button type="button" class="chip" data-size="1080x1350" aria-pressed="false">Portrait · 1080×1350</button>
+        <button type="button" class="chip" data-size="1920x1080" aria-pressed="true">Wide · 1920×1080</button>
+      </div>
+      <button id="export" type="button" class="export">Export PNG</button>
+      <p id="status" role="status"></p>
+    </div>
+    <p class="fine">100% original art — no game logos, artwork or fonts. Photos stay on your machine.</p>
+  </section>
+  <section class="stage" aria-label="Live preview">
+    <div class="canvasWrap">
+      <canvas id="cover" width="1920" height="1080" aria-label="The cover"></canvas>
+      <div id="panelOverlay" class="panelOverlay" hidden></div>
+    </div>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
